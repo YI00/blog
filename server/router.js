@@ -6,13 +6,7 @@ const assert = require('http-assert')
 
 const SECRET = 'sghsjdfgshjf'
 
-// 权限验证中间件
-const auth = async (req,res,next)=>{
-  const raw = String(req.headers.authorization).split(' ')
-  const { id } = jwt.verify(raw,SECRET)
-  req.user = await db.User.findById(id)
-  next()
-}
+
 
 //注册
 router.post('/api/register',async (req,res)=>{
@@ -82,6 +76,19 @@ router.post('/api/login',async (req,res)=>{
     token
   })
 })
+
+// 权限验证中间件
+// const auth = async (req,res,next)=>{
+//   const raw = String(req.headers.authorization).split(' ')
+//   const { id } = jwt.verify(raw,SECRET)
+//   req.user = await db.User.findById(id)
+//   next()
+// }
+// // 判断登录的是哪位用户
+// router.get('/api/admin/user',auth,async (req,res)=>{
+//   res.json(req.user)
+// })
+
 
 // 获取所有文章
 router.get('/api/articleList',async (req,res)=>{

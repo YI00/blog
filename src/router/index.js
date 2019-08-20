@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import article from '@/components/article.vue'
+import article from '@/components/article/article.vue'
 import sidebar from '@/subcomponents/sidebar.vue'
-import articleDetail from '@/components/articleDetail.vue'
+import articleDetail from '@/components/article/articleDetail.vue'
 import about from '@/components/about.vue'
 import signIn from '@/components/admin/signIn.vue'
 import background from '@/components/admin/background.vue'
+import Users from '@/components/admin/users.vue'
+import UserEdit from '@/components/admin/userEdit.vue'
 
 
 Vue.use(Router)
@@ -34,7 +36,17 @@ export default new Router({
     },
     {
       path:'/admin/background',
-      component:background
+      component:background,
+      children:[
+        {
+          path:'users',
+          component:Users
+        },
+        {
+          path:'userEdit',
+          component:UserEdit
+        }
+      ]
     }
   ]
 })

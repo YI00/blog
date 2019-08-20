@@ -32,7 +32,9 @@ export default {
         message:res.data.message
         })
       }else{
-        localStorage.token = res.data.token
+        // localStorage.token = res.data.token
+        sessionStorage.setItem("username",res.data.user.name)
+        sessionStorage.setItem("usertoken",res.data.token)
         this.$router.push('/admin/background')
         this.$message({
           type:'success',
