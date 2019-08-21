@@ -18,8 +18,8 @@
       <el-submenu index="3">
         <template slot="title"><i class="el-icon-setting"></i>文章管理</template>
         <el-menu-item-group>
-            <el-menu-item index="users">文章列表</el-menu-item>
-            <el-menu-item index="users">新增文章</el-menu-item>
+            <el-menu-item index="/admin/background/articles">文章列表</el-menu-item>
+            <el-menu-item index="/admin/addArticle">新增文章</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>

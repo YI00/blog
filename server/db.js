@@ -20,7 +20,9 @@ const articleSchema = new mongoose.Schema({
   date:String,
   content:String,
   gist:String,
-  labels:Array
+  labels:Array,
+  html:String,
+  md:String
 })
 
 const Models = {

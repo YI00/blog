@@ -104,17 +104,20 @@ router.get('/api/articleDetail/:id',async (req,res)=>{
 
 // 文章保存
 router.post('/api/admin/saveArticle',function(req,res){
-  new db.Article(req.body.articleInformation).save(function(err){
+  new db.Article(req.body).save(function(err){
     if(err){
       return res.status(500).send()
     }
-    res.send()
+    res.json({
+      code:1,
+      message:'文章保存成功'
+    })
   })
 })
 
 // 文章更新
 router.post('/api/admin/updateArticle',function(req,res){
-  var info = req.body.articleInformation
+  var info = req.body
   db.Article.find({_id:info._id},function(err,data){
     if(err){
       return 
@@ -139,7 +142,10 @@ router.post('/api/admin/deleteArticle',function(req,res){
     if(err){
       return res.status(500).send()
     }
-    res.send()
+    res.json({
+      code:1,
+      message:'删除成功'
+    })
   })
 })
 

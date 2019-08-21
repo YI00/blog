@@ -8,6 +8,8 @@ import signIn from '@/components/admin/signIn.vue'
 import background from '@/components/admin/background.vue'
 import Users from '@/components/admin/users.vue'
 import UserEdit from '@/components/admin/userEdit.vue'
+import AddArticle from '@/components/article/addArticle.vue'
+import articles from '@/components/admin/articleList.vue'
 
 
 Vue.use(Router)
@@ -45,8 +47,15 @@ export default new Router({
         {
           path:'userEdit',
           component:UserEdit
+        },
+        {
+          path:'articles',
+          component:articles
         }
       ]
+    },{
+      path:'/admin/addArticle/:id',
+      component:AddArticle
     }
   ]
 })

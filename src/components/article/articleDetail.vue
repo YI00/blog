@@ -9,7 +9,8 @@
         <el-tag v-else class="tag_margin" type="primary" v-for="tag in article.labels" :key="article.labels.id">{{ tag }}</el-tag>
         </span>
       </div>
-        <mavon-editor
+      <div v-html="article.html"></div>
+        <!-- <mavon-editor
           class="md"
           :value="article.content"
           :subfield = "prop.subfield"
@@ -18,7 +19,8 @@
           :editable="prop.editable"
           :scrollStyle="prop.scrollStyle"
           :boxShadow="false"
-        ></mavon-editor>
+        ></mavon-editor> -->
+
     </div>
   </div>
 </template>

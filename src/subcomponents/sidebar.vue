@@ -21,11 +21,11 @@
             <span>登录</span>
           </li>
         </router-link>
-        <router-link to="/admin/articleList">
+        <div style="color:#545455; cursor: pointer;" @click="goAdmin()">
           <li class="nav">
             <span>管理</span>
           </li>
-        </router-link>
+        </div>
         <router-link to="/admin/articleEdit">
           <li class="nav">
             <span>写文章</span>
@@ -87,6 +87,16 @@
         this.$axios.get('/api/articleList').then(res=>{
           this.articleNumber = res.data.length
         })
+      },
+      goAdmin(){
+        if(sessionStorage.getItem('username')){
+          this.$router.push('admin/background')
+        }else{
+          this.$message({
+            type:'error',
+            message:'请先登录'
+          })
+        }
       }
     }
   }

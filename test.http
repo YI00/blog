@@ -27,3 +27,6 @@ post {{url}}/login
   "username":"user1",
   "password":"123456"
 }
+
+### 获取所有文章
+get {{url}}/articleList
