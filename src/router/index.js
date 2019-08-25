@@ -10,6 +10,7 @@ import Users from '@/components/admin/users.vue'
 import UserEdit from '@/components/admin/userEdit.vue'
 import AddArticle from '@/components/article/addArticle.vue'
 import articles from '@/components/admin/articleList.vue'
+import EditArticle from '@/components/article/editArticle.vue'
 
 
 Vue.use(Router)
@@ -54,7 +55,10 @@ export default new Router({
         }
       ]
     },{
-      path:'/admin/addArticle/:id',
+      path:'/admin/editArticle/:id',
+      component:EditArticle
+    },{
+      path:'/admin/addArticle',
       component:AddArticle
     }
   ]

@@ -36,7 +36,7 @@ export default {
     async editA(row){
       const id = row._id
       this.$router.push(
-        '/admin/addArticle/'+id
+        '/admin/editArticle/'+id
       )
     },
     // 删除文章
