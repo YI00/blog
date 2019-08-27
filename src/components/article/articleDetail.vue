@@ -20,11 +20,12 @@
           :scrollStyle="prop.scrollStyle"
           :boxShadow="false"
         ></mavon-editor> -->
-
+        <my-com></my-com>
     </div>
   </div>
 </template>
 <script>
+import myCom from '../comment/commemt.vue'
 export default {
   data(){
     return {
@@ -53,6 +54,9 @@ export default {
           }
           return data
         }
+  },
+  components:{
+    "my-com":myCom
   }
 }
 </script>

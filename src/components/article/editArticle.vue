@@ -50,29 +50,31 @@ import { throws } from 'assert';
 export default {
     data() {
         return {
-            content:'', // 输入的markdown
-            html:'',    // 及时转的html
-            title:'',//标题
-            inputVisible: false,
-            inputValue: '',
-            gist:'',
-            labels:[]
+            // content:'', // 输入的markdown
+            // html:'',    // 及时转的html
+            // title:'',//标题
+            // inputVisible: false,
+            // inputValue: '',
+            // gist:'',
+            // labels:[]
+            article:{}
         }
     },
-    mounted(){
-        if(this.$route.params.id){
-            const res=this.$axios.get('/api/articleDetail/'+this.$route.params.id)
-            this.content = res.data.content
-            this.html = res.data.html
-            this.title = res.data.title
-            this.date = res.data.date
-            this.gist = res.data.gist
-            this.labels = res.data.labels
-            console.log(res)
-        }
+    created(){
+        // this.getArticleDetail()
     },
+
     methods: {
         // element标签组件
+
+      // async getArticleDetail(){
+      //   const res=this.$axios.get('/api/articleDetail/'+this.$route.params.id)
+      //   this.gist=res.data.gist
+      //   this.title=res.data.title
+      //   this.inputValue=res.data.md
+      //   this.content=res.data.html
+      //   console.log(res)
+      // },
       handleClose: function (tag) {
         this.labels.splice(this.labels.indexOf(tag), 1)
       },

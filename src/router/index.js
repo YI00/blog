@@ -40,6 +40,7 @@ export default new Router({
     {
       path:'/admin/background',
       component:background,
+      redirect:'/admin/background/articles',
       children:[
         {
           path:'users',

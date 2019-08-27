@@ -33,13 +33,24 @@ export default {
         })
       }else{
         // localStorage.token = res.data.token
-        sessionStorage.setItem("username",res.data.user.name)
-        sessionStorage.setItem("usertoken",res.data.token)
-        this.$router.push('/admin/background')
-        this.$message({
-          type:'success',
-          message:'登录成功'
-        })
+        if(res.data.user.visitor===1){
+            sessionStorage.setItem("username",res.data.user.name)
+            sessionStorage.setItem("usertoken",res.data.token)
+            sessionStorage.setItem("visitor",1)
+           this.$router.push('/')
+           this.$message({
+              type:'success',
+              message:'登录成功'
+          })
+        }else{
+          sessionStorage.setItem("username",res.data.user.name)
+          sessionStorage.setItem("usertoken",res.data.token)
+          this.$router.push('/admin/background')
+          this.$message({
+            type:'success',
+            message:'登录成功'
+          })
+        }   
       }
     },
     changeStatus:function(){

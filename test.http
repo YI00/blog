@@ -30,3 +30,16 @@ post {{url}}/login
 
 ### 获取所有文章
 get {{url}}/articleList
+
+### 添加评论
+post {{url}}/addcom
+{{json}}
+
+{
+  "comments":[
+    {"comId":1},
+    {"username":"ysz1"},
+    {"content":"这是一条评论",}
+  ],
+  "artId":1
+}

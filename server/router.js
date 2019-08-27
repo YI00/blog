@@ -23,7 +23,8 @@ router.post('/api/register',async (req,res)=>{
 
   const user = await db.User.create({
     name:req.body.name,
-    password:req.body.password
+    password:req.body.password,
+    visitor:1
   })
   res.json({
     code:1,
@@ -154,5 +155,25 @@ router.get('/api/users',async(req,res)=>{
   const users = await db.User.find()
   res.json(users)
 })
+
+//获取评论
+router.get('/api/getcomments/:artid?pageindex=number',async(req,res)=>{
+  const com=await db.Comment.find()
+})
+
+
+//添加评论
+router.post('/api/addcom',function(req,res){
+  new db.Comment(req.body).save(function(err){
+    if(err){
+      return res.status(500).send()
+    }
+    res.json({
+      code:1,
+      message:'评论成功'
+    })
+  })
+})
+
 
 module.exports = router 

@@ -59,18 +59,18 @@ export default {
             labels:[]
         }
     },
-    mounted(){
-        if(this.$route.params.id){
-            const res=this.$axios.get('/api/articleDetail/'+this.$route.params.id)
-            this.content = res.data.content
-            this.html = res.data.html
-            this.title = res.data.title
-            this.date = res.data.date
-            this.gist = res.data.gist
-            this.labels = res.data.labels
-            console.log(res)
-        }
-    },
+    // mounted(){
+    //     if(this.$route.params.id){
+    //         const res=this.$axios.get('/api/articleDetail/'+this.$route.params.id)
+    //         this.content = res.data.content
+    //         this.html = res.data.html
+    //         this.title = res.data.title
+    //         this.date = res.data.date
+    //         this.gist = res.data.gist
+    //         this.labels = res.data.labels
+    //         console.log(res)
+    //     }
+    // },
     methods: {
         // element标签组件
       handleClose: function (tag) {
